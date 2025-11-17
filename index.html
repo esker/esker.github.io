@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Isaac Gibbs — Personal Site</title>
+  <meta name="description" content="Engineer, game developer, and founder. Building games and helpful tools." />
+  <meta property="og:title" content="Isaac Gibbs — Personal Site" />
+  <meta property="og:description" content="Engineer, game developer, and founder. Building games and helpful tools." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/1?v=4" />
+  <link rel="icon" href="/favicon.svg">
+  <!-- Tailwind CSS via CDN for styling (book-like light theme) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Custom Tailwind configuration for book-like light theme
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // Custom clover purple accent colors
+            clover: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
+            },
+            // Book-like neutral palette (cream and warm grays)
+            paper: {
+              50: '#faf9f7',
+              100: '#f5f3f0',
+              200: '#e8e4df',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* Smooth scrolling for better UX */
+    html { scroll-behavior: smooth; }
+
+    /* Book-like page styling */
+    body {
+      background-color: #faf9f7;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Subtle shadow for page depth */
+    .book-shadow {
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Readable line-height for long-form content */
+    p { line-height: 1.8; }
+  </style>
+</head>
+<body class="bg-paper-50 text-gray-900 antialiased">
+  <!-- Navigation: Sticky header with minimal design -->
+  <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-paper-50/90 bg-paper-50/95 border-b border-paper-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex items-center justify-between">
+      <!-- Logo/Home link -->
+      <a href="#" class="font-bold text-lg tracking-tight text-gray-900">Isaac Gibbs</a>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#about" class="hover:text-clover-600 transition-colors">About</a>
+        <a href="#projects" class="hover:text-clover-600 transition-colors">Projects</a>
+        <a href="#ai-work" class="hover:text-clover-600 transition-colors">AI & Backend</a>
+        <a href="#writing" class="hover:text-clover-600 transition-colors">Writing</a>
+        <a href="#contact" class="hover:text-clover-600 transition-colors">Contact</a>
+      </nav>
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg border border-paper-200 px-3 py-2 text-sm hover:bg-paper-100 transition-colors">Menu</button>
+    </div>
+    <!-- Mobile Navigation -->
+    <div id="mobileNav" class="md:hidden hidden border-t border-paper-200 bg-paper-50">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex flex-col gap-3 text-sm">
+        <a href="#about" class="hover:text-clover-600 transition-colors">About</a>
+        <a href="#projects" class="hover:text-clover-600 transition-colors">Projects</a>
+        <a href="#ai-work" class="hover:text-clover-600 transition-colors">AI & Backend</a>
+        <a href="#writing" class="hover:text-clover-600 transition-colors">Writing</a>
+        <a href="#contact" class="hover:text-clover-600 transition-colors">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section: Introduction with profile picture -->
+  <section class="relative">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16 md:py-24">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left: Text content -->
+        <div>
+          <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight text-gray-900">
+            Building thoughtful games and helpful tools
+          </h1>
+          <p class="mt-6 text-gray-700 text-lg leading-relaxed">
+            Senior engineering leader and founder at <a href="https://www.cloudandclover.com" class="text-clover-600 font-semibold hover:text-clover-700 underline underline-offset-4 transition-colors">Cloud and Clover</a>. I ship games and game dev tools. I like clean systems, strong teams, and player joy.
+          </p>
+          <div class="mt-8 flex gap-4">
+            <a href="#projects" class="inline-flex items-center rounded-lg bg-clover-600 text-white px-6 py-3 text-sm font-semibold hover:bg-clover-700 transition-colors">See projects</a>
+            <a href="#contact" class="inline-flex items-center rounded-lg border-2 border-gray-300 text-gray-900 px-6 py-3 text-sm font-semibold hover:bg-paper-100 transition-colors">Contact</a>
+          </div>
+          <div class="mt-8 text-sm text-gray-600">
+            <p>Based in Massachusetts</p>
+          </div>
+        </div>
+        <!-- Right: Profile Picture from LinkedIn -->
+        <div class="flex justify-center">
+          <div class="relative">
+            <div class="w-80 h-80 rounded-2xl overflow-hidden book-shadow border-4 border-white">
+              <!-- LinkedIn profile image (will need to be updated with actual image URL) -->
+              <img
+                src="https://media.licdn.com/dms/image/D5603AQH0fcX3aI-e0Q/profile-displayphoto-shrink_200_200/0/1703014451839?e=1735689600&v=beta&t=XXXXXXX"
+                alt="Isaac Gibbs - Profile Photo"
+                class="w-full h-full object-cover"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section: Brief background and skills -->
+  <section id="about" class="border-t border-paper-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">About</h2>
+      <p class="mt-6 text-gray-700 max-w-3xl text-lg leading-relaxed">
+        I am an engineering manager and product-minded builder who ships. I have led teams, built systems from scratch, and moved between code and strategy. I enjoy hard problems that connect craft to outcomes.
+      </p>
+      <!-- Skills grid -->
+      <ul class="mt-10 grid sm:grid-cols-2 gap-4 text-sm text-gray-700">
+        <li class="rounded-xl border-2 border-paper-200 p-5 hover:border-clover-300 hover:bg-clover-50 transition-all">
+          <span class="font-semibold text-clover-600">10+ years</span> in games, web, and platform engineering
+        </li>
+        <li class="rounded-xl border-2 border-paper-200 p-5 hover:border-clover-300 hover:bg-clover-50 transition-all">
+          <span class="font-semibold text-clover-600">Languages</span>: UE5 C++/Blueprints, TypeScript, Python, C#
+        </li>
+        <li class="rounded-xl border-2 border-paper-200 p-5 hover:border-clover-300 hover:bg-clover-50 transition-all">
+          <span class="font-semibold text-clover-600">Leadership</span>: Team management, agile systems, mentoring
+        </li>
+        <li class="rounded-xl border-2 border-paper-200 p-5 hover:border-clover-300 hover:bg-clover-50 transition-all">
+          <span class="font-semibold text-clover-600">Based in</span> Massachusetts, dad of two
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects Section: Game development projects grid -->
+  <section id="projects" class="border-t border-paper-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+      <div class="flex items-end justify-between gap-4 mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Game Projects</h2>
+        <a href="https://github.com/" class="text-sm text-clover-600 font-semibold hover:text-clover-700 underline underline-offset-4 transition-colors">View GitHub →</a>
+      </div>
+      <!-- Projects grid (3 columns on desktop) -->
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Project Card 1: Filli's Grove -->
+        <article class="rounded-xl border-2 border-paper-200 overflow-hidden hover:border-clover-400 hover:shadow-lg transition-all">
+          <!-- Project Image -->
+          <div class="aspect-[16/9] bg-gradient-to-br from-paper-100 to-paper-200 flex items-center justify-center">
+            <img src="images/pgs-010-006.png" alt="Filli's Grove" class="w-full h-full object-cover">
+          </div>
+          <!-- Project Info -->
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900">Filli's Grove</h3>
+            <p class="mt-2 text-gray-600">ARPG farming defense prototype with corpse trees and moody New England vibes. Built in UE5.6</p>
+            <a class="mt-4 inline-flex text-sm text-clover-600 font-semibold hover:text-clover-700 underline underline-offset-4 transition-colors" href="#">View Project →</a>
+          </div>
+        </article>
+
+        <!-- Project Card 2: 'Twas The Night -->
+        <article class="rounded-xl border-2 border-paper-200 overflow-hidden hover:border-clover-400 hover:shadow-lg transition-all">
+          <!-- Project Image -->
+          <div class="aspect-[16/9] bg-gradient-to-br from-paper-100 to-paper-200 flex items-center justify-center">
+            <img src="images/pgs-020-000.png" alt="Twas The Night" class="w-full h-full object-cover">
+          </div>
+          <!-- Project Info -->
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900">'Twas The Night</h3>
+            <p class="mt-2 text-gray-600">City builder where the city is the workshop. Build Santa's operations.</p>
+            <a class="mt-4 inline-flex text-sm text-clover-600 font-semibold hover:text-clover-700 underline underline-offset-4 transition-colors" href="#">View Project →</a>
+          </div>
+        </article>
+
+        <!-- Project Card 3: HowlRound.dev -->
+        <article class="rounded-xl border-2 border-paper-200 overflow-hidden hover:border-clover-400 hover:shadow-lg transition-all">
+          <!-- Project Image -->
+          <div class="aspect-[16/9] bg-gradient-to-br from-paper-100 to-paper-200 flex items-center justify-center">
+            <img src="images/pgs-200-001.png" alt="HowlRound.dev" class="w-full h-full object-cover">
+          </div>
+          <!-- Project Info -->
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900">HowlRound.dev</h3>
+            <p class="mt-2 text-gray-600">Steam review intelligence platform that helps indie developers understand player feedback.</p>
+            <a class="mt-4 inline-flex text-sm text-clover-600 font-semibold hover:text-clover-700 underline underline-offset-4 transition-colors" href="https://howlround.dev">View Project →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI & Backend Work Section: Specialized projects and technologies -->
+  <section id="ai-work" class="border-t border-paper-200 bg-gradient-to-b from-clover-50 to-paper-50">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">AI Bots & Server Architecture</h2>
+      <p class="mt-4 text-gray-700 text-lg leading-relaxed">
+        Specialized work in designing and implementing AI bot systems and backend infrastructure for scalable game experiences.
+      </p>
+
+      <!-- AI/Backend projects grid -->
+      <div class="mt-12 grid md:grid-cols-2 gap-8">
+
+        <!-- Project Card: Venture Valley -->
+        <article class="rounded-xl border-2 border-clover-200 overflow-hidden hover:border-clover-400 hover:shadow-lg transition-all bg-white">
+          <!-- Project Image -->
+          <div class="aspect-[16/10] bg-gradient-to-br from-paper-100 to-paper-200 flex items-center justify-center">
+            <img src="images/venturevalley.jpg" alt="Venture Valley" class="w-full h-full object-cover">
+          </div>
+          <!-- Project Info -->
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900">Venture Valley</h3>
+            <div class="mt-2 space-y-2">
+              <p class="text-sm text-clover-700 font-semibold">AI Bots Engineer • Server Architect</p>
+              <p class="text-gray-600">Architected scalable backend systems and implemented intelligent bot behaviors for NPCs. Focused on performance optimization and game server infrastructure.</p>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="inline-block px-3 py-1 rounded-full bg-clover-100 text-clover-700 text-xs font-semibold">Backend Architecture</span>
+              <span class="inline-block px-3 py-1 rounded-full bg-clover-100 text-clover-700 text-xs font-semibold">AI Systems</span>
+              <span class="inline-block px-3 py-1 rounded-full bg-clover-100 text-clover-700 text-xs font-semibold">Server Engineering</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Additional technical details card -->
+        <article class="rounded-xl border-2 border-clover-200 overflow-hidden bg-white p-6 flex flex-col justify-between">
+          <div>
+            <h3 class="text-xl font-bold text-gray-900">Technical Highlights</h3>
+            <ul class="mt-4 space-y-3 text-gray-700">
+              <li class="flex items-start gap-3">
+                <span class="text-clover-600 font-bold mt-1">•</span>
+                <span>Designed scalable game server infrastructure handling 1000+ concurrent players</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-clover-600 font-bold mt-1">•</span>
+                <span>Implemented behavior trees and state machines for realistic NPC AI</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-clover-600 font-bold mt-1">•</span>
+                <span>Optimized database queries and caching strategies for performance</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-clover-600 font-bold mt-1">•</span>
+                <span>Built real-time communication systems with WebSockets</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-paper-200">
+            <p class="text-sm font-semibold text-clover-600">Tech Stack</p>
+            <p class="mt-2 text-sm text-gray-600">C++, C#, Python, PostgreSQL, Redis, AWS, Unreal Engine</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Writing Section: Blog posts and articles -->
+  <section id="writing" class="border-t border-paper-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Writing & Devlogs</h2>
+      <!-- Articles list -->
+      <ul class="mt-10 space-y-4 text-sm">
+        <!-- Article 1 -->
+        <li class="flex items-center justify-between border-2 border-paper-200 rounded-xl p-5 hover:border-clover-300 hover:bg-clover-50 transition-all">
+          <a href="#" class="text-gray-900 font-semibold hover:text-clover-600 transition-colors">Devlog 001 — Plant, fight, bury, repeat</a>
+          <span class="text-gray-500 text-xs font-semibold ml-4 whitespace-nowrap">Oct 2025</span>
+        </li>
+        <!-- Article 2 -->
+        <li class="flex items-center justify-between border-2 border-paper-200 rounded-xl p-5 hover:border-clover-300 hover:bg-clover-50 transition-all">
+          <a href="#" class="text-gray-900 font-semibold hover:text-clover-600 transition-colors">Shipping small tools to help indies</a>
+          <span class="text-gray-500 text-xs font-semibold ml-4 whitespace-nowrap">Sep 2025</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact Section: Call to action and social links -->
+  <section id="contact" class="border-t border-paper-200 bg-gradient-to-b from-paper-50 to-clover-50">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Get in Touch</h2>
+      <p class="mt-4 text-gray-700 text-lg">
+        I'm interested in opportunities as a Game Producer, Team Lead, or Engineering Manager. Let's talk!
+      </p>
+      <p class="mt-2 text-gray-700">
+        Email: <a class="text-clover-600 font-semibold hover:text-clover-700 underline underline-offset-4 transition-colors" href="mailto:contact@cloudandcloverstudios.com">contact@cloudandcloverstudios.com</a>
+      </p>
+      <!-- Social links -->
+      <div class="mt-8 flex flex-wrap gap-3 text-sm">
+        <a href="https://github.com/" class="rounded-lg border-2 border-gray-300 text-gray-900 px-5 py-3 font-semibold hover:bg-paper-100 hover:border-clover-400 transition-all">GitHub</a>
+        <a href="https://www.linkedin.com/in/isaac-gibbs-18396525/?trk=opento_sprofile_details" class="rounded-lg border-2 border-gray-300 text-gray-900 px-5 py-3 font-semibold hover:bg-paper-100 hover:border-clover-400 transition-all">LinkedIn</a>
+        <a href="https://x.com/" class="rounded-lg border-2 border-gray-300 text-gray-900 px-5 py-3 font-semibold hover:bg-paper-100 hover:border-clover-400 transition-all">X (Twitter)</a>
+        <a href="https://steamcommunity.com/" class="rounded-lg border-2 border-gray-300 text-gray-900 px-5 py-3 font-semibold hover:bg-paper-100 hover:border-clover-400 transition-all">Steam</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer: Copyright information -->
+  <footer class="border-t border-paper-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 text-sm text-gray-600">
+      © <span id="year"></span> Isaac Gibbs. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- JavaScript: Interactive elements and dynamic content -->
+  <script>
+    // Update footer year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle functionality
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>
