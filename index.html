@@ -10,32 +10,34 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/1?v=4" />
   <link rel="icon" href="/favicon.svg">
-  <!-- Tailwind CSS via CDN for styling (book-like light theme) -->
+  <!-- Tailwind CSS via CDN for styling (warm tan book page theme) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // Custom Tailwind configuration for book-like light theme
+    // Custom Tailwind configuration for New England fall theme with paper aesthetic
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            // Custom clover purple accent colors
-            clover: {
-              50: '#f5f3ff',
-              100: '#ede9fe',
-              200: '#ddd6fe',
-              300: '#c4b5fd',
-              400: '#a78bfa',
-              500: '#8b5cf6',
-              600: '#7c3aed',
-              700: '#6d28d9',
-              800: '#5b21b6',
-              900: '#4c1d95',
+            // New England fall accent colors - muted oranges, reds, yellows
+            fall: {
+              50: '#fdf9f4',
+              100: '#f9f1e8',
+              200: '#f0ddc9',
+              300: '#e8c4a3',
+              400: '#d9a876',
+              500: '#c9915a',
+              600: '#b8754a',  // Muted burnt orange
+              700: '#9d5f3f',  // Deeper rust
+              800: '#823f2e',  // Deep red-brown
+              900: '#6b2d20',  // Very dark burgundy
             },
-            // Book-like neutral palette (cream and warm grays)
+            // Paper/cream palette for New England aesthetic
             paper: {
-              50: '#faf9f7',
-              100: '#f5f3f0',
-              200: '#e8e4df',
+              50: '#fdfaf7',
+              100: '#f9f3ed',
+              200: '#f0e6d9',
+              300: '#e8dcc9',
+              400: '#dfc9b0',
             }
           }
         }
@@ -46,9 +48,10 @@
     /* Smooth scrolling for better UX */
     html { scroll-behavior: smooth; }
 
-    /* Book-like page styling */
+    /* New England fall paper aesthetic */
     body {
-      background-color: #faf9f7;
+      background: linear-gradient(135deg, #f9f3ed 0%, #f0e6d9 100%);
+      background-attachment: fixed;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
@@ -61,31 +64,31 @@
     p { line-height: 1.8; }
   </style>
 </head>
-<body class="bg-paper-50 text-gray-900 antialiased">
+<body class="bg-gradient-to-br from-paper-100 to-paper-200 text-gray-900 antialiased">
   <!-- Navigation: Sticky header with minimal design -->
-  <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-paper-50/90 bg-paper-50/95 border-b border-paper-200">
+  <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-paper-100/85 bg-paper-100/90 border-b-2 border-fall-600/30">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex items-center justify-between">
       <!-- Logo/Home link -->
-      <a href="#" class="font-bold text-lg tracking-tight text-gray-900">Isaac Gibbs</a>
+      <a href="#" class="font-bold text-lg tracking-tight text-fall-800">Isaac Gibbs</a>
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-8 text-sm">
-        <a href="#about" class="hover:text-clover-600 transition-colors">About</a>
-        <a href="#projects" class="hover:text-clover-600 transition-colors">Projects</a>
-        <a href="#ai-work" class="hover:text-clover-600 transition-colors">AI & Backend</a>
-        <a href="#writing" class="hover:text-clover-600 transition-colors">Writing</a>
-        <a href="#contact" class="hover:text-clover-600 transition-colors">Contact</a>
+        <a href="#about" class="text-gray-800 hover:text-fall-700 transition-colors font-medium">About</a>
+        <a href="#projects" class="text-gray-800 hover:text-fall-700 transition-colors font-medium">Projects</a>
+        <a href="#ai-work" class="text-gray-800 hover:text-fall-700 transition-colors font-medium">AI & Backend</a>
+        <a href="#writing" class="text-gray-800 hover:text-fall-700 transition-colors font-medium">Writing</a>
+        <a href="#contact" class="text-gray-800 hover:text-fall-700 transition-colors font-medium">Contact</a>
       </nav>
       <!-- Mobile Menu Button -->
-      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg border border-paper-200 px-3 py-2 text-sm hover:bg-paper-100 transition-colors">Menu</button>
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg border-2 border-fall-400 px-3 py-2 text-sm hover:bg-fall-100 transition-colors text-fall-700">Menu</button>
     </div>
     <!-- Mobile Navigation -->
-    <div id="mobileNav" class="md:hidden hidden border-t border-paper-200 bg-paper-50">
+    <div id="mobileNav" class="md:hidden hidden border-t-2 border-fall-600/20 bg-paper-100">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex flex-col gap-3 text-sm">
-        <a href="#about" class="hover:text-clover-600 transition-colors">About</a>
-        <a href="#projects" class="hover:text-clover-600 transition-colors">Projects</a>
-        <a href="#ai-work" class="hover:text-clover-600 transition-colors">AI & Backend</a>
-        <a href="#writing" class="hover:text-clover-600 transition-colors">Writing</a>
-        <a href="#contact" class="hover:text-clover-600 transition-colors">Contact</a>
+        <a href="#about" class="text-gray-800 hover:text-fall-700 transition-colors font-medium">About</a>
+        <a href="#projects" class="text-gray-800 hover:text-fall-700 transition-colors font-medium">Projects</a>
+        <a href="#ai-work" class="text-gray-800 hover:text-fall-700 transition-colors font-medium">AI & Backend</a>
+        <a href="#writing" class="text-gray-800 hover:text-fall-700 transition-colors font-medium">Writing</a>
+        <a href="#contact" class="text-gray-800 hover:text-fall-700 transition-colors font-medium">Contact</a>
       </div>
     </div>
   </header>
@@ -96,24 +99,24 @@
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <!-- Left: Text content -->
         <div>
-          <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight text-gray-900">
+          <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight text-fall-900">
             Building thoughtful games and helpful tools
           </h1>
           <p class="mt-6 text-gray-700 text-lg leading-relaxed">
-            Senior engineering leader and founder at <a href="https://www.cloudandclover.com" class="text-clover-600 font-semibold hover:text-clover-700 underline underline-offset-4 transition-colors">Cloud and Clover</a>. I ship games and game dev tools. I like clean systems, strong teams, and player joy.
+            Senior engineering leader and founder at <a href="https://www.cloudandclover.com" class="text-fall-700 font-semibold hover:text-fall-800 underline underline-offset-4 transition-colors">Cloud and Clover</a>. I ship games and game dev tools. I like clean systems, strong teams, and player joy.
           </p>
           <div class="mt-8 flex gap-4">
-            <a href="#projects" class="inline-flex items-center rounded-lg bg-clover-600 text-white px-6 py-3 text-sm font-semibold hover:bg-clover-700 transition-colors">See projects</a>
-            <a href="#contact" class="inline-flex items-center rounded-lg border-2 border-gray-300 text-gray-900 px-6 py-3 text-sm font-semibold hover:bg-paper-100 transition-colors">Contact</a>
+            <a href="#projects" class="inline-flex items-center rounded-lg bg-fall-700 text-white px-6 py-3 text-sm font-semibold hover:bg-fall-800 transition-colors shadow-md">See projects</a>
+            <a href="#contact" class="inline-flex items-center rounded-lg border-2 border-fall-600 text-fall-800 px-6 py-3 text-sm font-semibold hover:bg-fall-100 transition-colors">Contact</a>
           </div>
-          <div class="mt-8 text-sm text-gray-600">
+          <div class="mt-8 text-sm text-gray-700">
             <p>Based in Massachusetts</p>
           </div>
         </div>
         <!-- Right: Profile Picture from LinkedIn -->
         <div class="flex justify-center">
           <div class="relative">
-            <div class="w-80 h-80 rounded-2xl overflow-hidden book-shadow border-4 border-white">
+            <div class="w-80 h-80 rounded-2xl overflow-hidden book-shadow border-4 border-paper-400 shadow-xl">
               <!-- LinkedIn profile image (will need to be updated with actual image URL) -->
               <img
                 src="https://media.licdn.com/dms/image/D5603AQH0fcX3aI-e0Q/profile-displayphoto-shrink_200_200/0/1703014451839?e=1735689600&v=beta&t=XXXXXXX"
@@ -128,192 +131,384 @@
   </section>
 
   <!-- About Section: Brief background and skills -->
-  <section id="about" class="border-t border-paper-200">
+  <section id="about" class="border-t-2 border-fall-400/40 bg-gradient-to-b from-paper-100 to-paper-200">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">About</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-fall-900">About</h2>
       <p class="mt-6 text-gray-700 max-w-3xl text-lg leading-relaxed">
         I am an engineering manager and product-minded builder who ships. I have led teams, built systems from scratch, and moved between code and strategy. I enjoy hard problems that connect craft to outcomes.
       </p>
       <!-- Skills grid -->
       <ul class="mt-10 grid sm:grid-cols-2 gap-4 text-sm text-gray-700">
-        <li class="rounded-xl border-2 border-paper-200 p-5 hover:border-clover-300 hover:bg-clover-50 transition-all">
-          <span class="font-semibold text-clover-600">10+ years</span> in games, web, and platform engineering
+        <li class="rounded-xl border-2 border-fall-300 p-5 hover:border-fall-600 hover:bg-fall-50 transition-all bg-white/50">
+          <span class="font-semibold text-fall-700">10+ years</span> in games, web, and platform engineering
         </li>
-        <li class="rounded-xl border-2 border-paper-200 p-5 hover:border-clover-300 hover:bg-clover-50 transition-all">
-          <span class="font-semibold text-clover-600">Languages</span>: UE5 C++/Blueprints, TypeScript, Python, C#
+        <li class="rounded-xl border-2 border-fall-300 p-5 hover:border-fall-600 hover:bg-fall-50 transition-all bg-white/50">
+          <span class="font-semibold text-fall-700">Languages</span>: UE5 C++/Blueprints, TypeScript, Python, C#
         </li>
-        <li class="rounded-xl border-2 border-paper-200 p-5 hover:border-clover-300 hover:bg-clover-50 transition-all">
-          <span class="font-semibold text-clover-600">Leadership</span>: Team management, agile systems, mentoring
+        <li class="rounded-xl border-2 border-fall-300 p-5 hover:border-fall-600 hover:bg-fall-50 transition-all bg-white/50">
+          <span class="font-semibold text-fall-700">Leadership</span>: Team management, agile systems, mentoring
         </li>
-        <li class="rounded-xl border-2 border-paper-200 p-5 hover:border-clover-300 hover:bg-clover-50 transition-all">
-          <span class="font-semibold text-clover-600">Based in</span> Massachusetts, dad of two
+        <li class="rounded-xl border-2 border-fall-300 p-5 hover:border-fall-600 hover:bg-fall-50 transition-all bg-white/50">
+          <span class="font-semibold text-fall-700">Based in</span> Massachusetts, dad of two
         </li>
       </ul>
     </div>
   </section>
 
   <!-- Projects Section: Game development projects grid -->
-  <section id="projects" class="border-t border-paper-200">
+  <section id="projects" class="border-t-2 border-fall-400/40 bg-gradient-to-b from-paper-200 to-paper-100">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
       <div class="flex items-end justify-between gap-4 mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Game Projects</h2>
-        <a href="https://github.com/" class="text-sm text-clover-600 font-semibold hover:text-clover-700 underline underline-offset-4 transition-colors">View GitHub →</a>
+        <h2 class="text-3xl md:text-4xl font-bold text-fall-900">Game Projects</h2>
+        <a href="https://github.com/" class="text-sm text-fall-700 font-semibold hover:text-fall-800 underline underline-offset-4 transition-colors">View GitHub →</a>
       </div>
       <!-- Projects grid (3 columns on desktop) -->
       <div class="grid md:grid-cols-3 gap-8">
 
         <!-- Project Card 1: Filli's Grove -->
-        <article class="rounded-xl border-2 border-paper-200 overflow-hidden hover:border-clover-400 hover:shadow-lg transition-all">
+        <article class="rounded-xl border-2 border-fall-300 overflow-hidden hover:border-fall-700 hover:shadow-lg transition-all bg-white/60">
           <!-- Project Image -->
-          <div class="aspect-[16/9] bg-gradient-to-br from-paper-100 to-paper-200 flex items-center justify-center">
+          <div class="aspect-[16/9] bg-gradient-to-br from-paper-200 to-paper-300 flex items-center justify-center">
             <img src="images/pgs-010-006.png" alt="Filli's Grove" class="w-full h-full object-cover">
           </div>
           <!-- Project Info -->
           <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-900">Filli's Grove</h3>
-            <p class="mt-2 text-gray-600">ARPG farming defense prototype with corpse trees and moody New England vibes. Built in UE5.6</p>
-            <a class="mt-4 inline-flex text-sm text-clover-600 font-semibold hover:text-clover-700 underline underline-offset-4 transition-colors" href="#">View Project →</a>
+            <h3 class="text-xl font-bold text-fall-900">Filli's Grove</h3>
+            <p class="mt-2 text-gray-700">ARPG farming defense prototype with corpse trees and moody New England vibes. Built in UE5.6</p>
+            <a class="mt-4 inline-flex text-sm text-fall-700 font-semibold hover:text-fall-800 underline underline-offset-4 transition-colors" href="#">View Project →</a>
           </div>
         </article>
 
         <!-- Project Card 2: 'Twas The Night -->
-        <article class="rounded-xl border-2 border-paper-200 overflow-hidden hover:border-clover-400 hover:shadow-lg transition-all">
+        <article class="rounded-xl border-2 border-fall-300 overflow-hidden hover:border-fall-700 hover:shadow-lg transition-all bg-white/60">
           <!-- Project Image -->
-          <div class="aspect-[16/9] bg-gradient-to-br from-paper-100 to-paper-200 flex items-center justify-center">
+          <div class="aspect-[16/9] bg-gradient-to-br from-paper-200 to-paper-300 flex items-center justify-center">
             <img src="images/pgs-020-000.png" alt="Twas The Night" class="w-full h-full object-cover">
           </div>
           <!-- Project Info -->
           <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-900">'Twas The Night</h3>
-            <p class="mt-2 text-gray-600">City builder where the city is the workshop. Build Santa's operations.</p>
-            <a class="mt-4 inline-flex text-sm text-clover-600 font-semibold hover:text-clover-700 underline underline-offset-4 transition-colors" href="#">View Project →</a>
+            <h3 class="text-xl font-bold text-fall-900">'Twas The Night</h3>
+            <p class="mt-2 text-gray-700">City builder where the city is the workshop. Build Santa's operations.</p>
+            <a class="mt-4 inline-flex text-sm text-fall-700 font-semibold hover:text-fall-800 underline underline-offset-4 transition-colors" href="#">View Project →</a>
           </div>
         </article>
 
         <!-- Project Card 3: HowlRound.dev -->
-        <article class="rounded-xl border-2 border-paper-200 overflow-hidden hover:border-clover-400 hover:shadow-lg transition-all">
+        <article class="rounded-xl border-2 border-fall-300 overflow-hidden hover:border-fall-700 hover:shadow-lg transition-all bg-white/60">
           <!-- Project Image -->
-          <div class="aspect-[16/9] bg-gradient-to-br from-paper-100 to-paper-200 flex items-center justify-center">
+          <div class="aspect-[16/9] bg-gradient-to-br from-paper-200 to-paper-300 flex items-center justify-center">
             <img src="images/pgs-200-001.png" alt="HowlRound.dev" class="w-full h-full object-cover">
           </div>
           <!-- Project Info -->
           <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-900">HowlRound.dev</h3>
-            <p class="mt-2 text-gray-600">Steam review intelligence platform that helps indie developers understand player feedback.</p>
-            <a class="mt-4 inline-flex text-sm text-clover-600 font-semibold hover:text-clover-700 underline underline-offset-4 transition-colors" href="https://howlround.dev">View Project →</a>
+            <h3 class="text-xl font-bold text-fall-900">HowlRound.dev</h3>
+            <p class="mt-2 text-gray-700">Steam review intelligence platform that helps indie developers understand player feedback.</p>
+            <a class="mt-4 inline-flex text-sm text-fall-700 font-semibold hover:text-fall-800 underline underline-offset-4 transition-colors" href="https://howlround.dev">View Project →</a>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- AI & Backend Work Section: Specialized projects and technologies -->
-  <section id="ai-work" class="border-t border-paper-200 bg-gradient-to-b from-clover-50 to-paper-50">
+  <!-- Games Released Under My Leadership Section: Responsive image gallery -->
+  <section id="leadership-games" class="border-t-2 border-fall-400/40 bg-gradient-to-b from-paper-100 to-paper-200">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">AI Bots & Server Architecture</h2>
-      <p class="mt-4 text-gray-700 text-lg leading-relaxed">
-        Specialized work in designing and implementing AI bot systems and backend infrastructure for scalable game experiences.
-      </p>
+      <h2 class="text-3xl md:text-4xl font-bold text-fall-900 mb-12">Games Released Under My Leadership</h2>
+      <!-- Responsive image grid: 1 col on mobile, 2 cols on tablet, 3+ cols on desktop -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
-      <!-- AI/Backend projects grid -->
-      <div class="mt-12 grid md:grid-cols-2 gap-8">
-
-        <!-- Project Card: Venture Valley -->
-        <article class="rounded-xl border-2 border-clover-200 overflow-hidden hover:border-clover-400 hover:shadow-lg transition-all bg-white">
-          <!-- Project Image -->
-          <div class="aspect-[16/10] bg-gradient-to-br from-paper-100 to-paper-200 flex items-center justify-center">
-            <img src="images/venturevalley.jpg" alt="Venture Valley" class="w-full h-full object-cover">
-          </div>
-          <!-- Project Info -->
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-900">Venture Valley</h3>
-            <div class="mt-2 space-y-2">
-              <p class="text-sm text-clover-700 font-semibold">AI Bots Engineer • Server Architect</p>
-              <p class="text-gray-600">Architected scalable backend systems and implemented intelligent bot behaviors for NPCs. Focused on performance optimization and game server infrastructure.</p>
-            </div>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="inline-block px-3 py-1 rounded-full bg-clover-100 text-clover-700 text-xs font-semibold">Backend Architecture</span>
-              <span class="inline-block px-3 py-1 rounded-full bg-clover-100 text-clover-700 text-xs font-semibold">AI Systems</span>
-              <span class="inline-block px-3 py-1 rounded-full bg-clover-100 text-clover-700 text-xs font-semibold">Server Engineering</span>
-            </div>
+        <!-- Image Gallery Item 1 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-010-006.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
           </div>
         </article>
 
-        <!-- Additional technical details card -->
-        <article class="rounded-xl border-2 border-clover-200 overflow-hidden bg-white p-6 flex flex-col justify-between">
-          <div>
-            <h3 class="text-xl font-bold text-gray-900">Technical Highlights</h3>
-            <ul class="mt-4 space-y-3 text-gray-700">
-              <li class="flex items-start gap-3">
-                <span class="text-clover-600 font-bold mt-1">•</span>
-                <span>Designed scalable game server infrastructure handling 1000+ concurrent players</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="text-clover-600 font-bold mt-1">•</span>
-                <span>Implemented behavior trees and state machines for realistic NPC AI</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="text-clover-600 font-bold mt-1">•</span>
-                <span>Optimized database queries and caching strategies for performance</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="text-clover-600 font-bold mt-1">•</span>
-                <span>Built real-time communication systems with WebSockets</span>
-              </li>
-            </ul>
-          </div>
-          <div class="mt-6 pt-4 border-t border-paper-200">
-            <p class="text-sm font-semibold text-clover-600">Tech Stack</p>
-            <p class="mt-2 text-sm text-gray-600">C++, C#, Python, PostgreSQL, Redis, AWS, Unreal Engine</p>
+        <!-- Image Gallery Item 2 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-010-008.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
           </div>
         </article>
+
+        <!-- Image Gallery Item 3 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-010-012.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 4 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-010-018.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 5 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-010-020.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 6 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-010-025.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 7 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-010-029.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 8 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-010-033.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 9 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-010-034.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 10 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-010-035.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 11 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-010-036.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 12 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-010-037.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 13 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-010-039.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 14 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-010-041.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 15 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-020-000.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 16 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-200-001.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 17 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-200-002.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 18 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-210-001.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 19 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-210-002.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 20 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-210-004.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 21 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-210-005.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 22 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-210-006.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 23 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-210-008.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 24 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-210-009.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 25 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-210-010.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 26 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-220-003.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 27 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-240-001.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 28 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-240-002.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 29 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-240-003.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 30 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-240-004.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 31 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-240-005.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 32 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-240-006.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 33 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-240-007.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 34 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/pgs-250-001.png" alt="Game screenshot" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
+        <!-- Image Gallery Item 35 -->
+        <article class="rounded-lg overflow-hidden border-2 border-fall-300 hover:border-fall-700 hover:shadow-lg transition-all bg-white/50">
+          <div class="aspect-[4/3] bg-gradient-to-br from-paper-200 to-paper-300 overflow-hidden">
+            <img src="images/venturevalley.jpg" alt="Venture Valley" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
   <!-- Writing Section: Blog posts and articles -->
-  <section id="writing" class="border-t border-paper-200">
+  <section id="writing" class="border-t-2 border-fall-400/40 bg-gradient-to-b from-paper-100 to-paper-200">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Writing & Devlogs</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-fall-900">Writing & Devlogs</h2>
       <!-- Articles list -->
       <ul class="mt-10 space-y-4 text-sm">
         <!-- Article 1 -->
-        <li class="flex items-center justify-between border-2 border-paper-200 rounded-xl p-5 hover:border-clover-300 hover:bg-clover-50 transition-all">
-          <a href="#" class="text-gray-900 font-semibold hover:text-clover-600 transition-colors">Devlog 001 — Plant, fight, bury, repeat</a>
-          <span class="text-gray-500 text-xs font-semibold ml-4 whitespace-nowrap">Oct 2025</span>
+        <li class="flex items-center justify-between border-2 border-fall-300 rounded-xl p-5 hover:border-fall-600 hover:bg-fall-50 transition-all bg-white/50">
+          <a href="#" class="text-fall-900 font-semibold hover:text-fall-700 transition-colors">Devlog 001 — Plant, fight, bury, repeat</a>
+          <span class="text-gray-600 text-xs font-semibold ml-4 whitespace-nowrap">Oct 2025</span>
         </li>
         <!-- Article 2 -->
-        <li class="flex items-center justify-between border-2 border-paper-200 rounded-xl p-5 hover:border-clover-300 hover:bg-clover-50 transition-all">
-          <a href="#" class="text-gray-900 font-semibold hover:text-clover-600 transition-colors">Shipping small tools to help indies</a>
-          <span class="text-gray-500 text-xs font-semibold ml-4 whitespace-nowrap">Sep 2025</span>
+        <li class="flex items-center justify-between border-2 border-fall-300 rounded-xl p-5 hover:border-fall-600 hover:bg-fall-50 transition-all bg-white/50">
+          <a href="#" class="text-fall-900 font-semibold hover:text-fall-700 transition-colors">Shipping small tools to help indies</a>
+          <span class="text-gray-600 text-xs font-semibold ml-4 whitespace-nowrap">Sep 2025</span>
         </li>
       </ul>
     </div>
   </section>
 
   <!-- Contact Section: Call to action and social links -->
-  <section id="contact" class="border-t border-paper-200 bg-gradient-to-b from-paper-50 to-clover-50">
+  <section id="contact" class="border-t-2 border-fall-400/40 bg-gradient-to-b from-paper-200 to-fall-100">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Get in Touch</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-fall-900">Get in Touch</h2>
       <p class="mt-4 text-gray-700 text-lg">
         I'm interested in opportunities as a Game Producer, Team Lead, or Engineering Manager. Let's talk!
       </p>
       <p class="mt-2 text-gray-700">
-        Email: <a class="text-clover-600 font-semibold hover:text-clover-700 underline underline-offset-4 transition-colors" href="mailto:contact@cloudandcloverstudios.com">contact@cloudandcloverstudios.com</a>
+        Email: <a class="text-fall-700 font-semibold hover:text-fall-800 underline underline-offset-4 transition-colors" href="mailto:isaac.gibbs@gmail.com">isaac.gibbs@gmail.com</a>
       </p>
       <!-- Social links -->
       <div class="mt-8 flex flex-wrap gap-3 text-sm">
-        <a href="https://github.com/" class="rounded-lg border-2 border-gray-300 text-gray-900 px-5 py-3 font-semibold hover:bg-paper-100 hover:border-clover-400 transition-all">GitHub</a>
-        <a href="https://www.linkedin.com/in/isaac-gibbs-18396525/?trk=opento_sprofile_details" class="rounded-lg border-2 border-gray-300 text-gray-900 px-5 py-3 font-semibold hover:bg-paper-100 hover:border-clover-400 transition-all">LinkedIn</a>
-        <a href="https://x.com/" class="rounded-lg border-2 border-gray-300 text-gray-900 px-5 py-3 font-semibold hover:bg-paper-100 hover:border-clover-400 transition-all">X (Twitter)</a>
-        <a href="https://steamcommunity.com/" class="rounded-lg border-2 border-gray-300 text-gray-900 px-5 py-3 font-semibold hover:bg-paper-100 hover:border-clover-400 transition-all">Steam</a>
+        <a href="https://github.com/" class="rounded-lg border-2 border-fall-600 text-fall-800 px-5 py-3 font-semibold hover:bg-fall-200 hover:border-fall-800 transition-all">GitHub</a>
+        <a href="https://www.linkedin.com/in/isaac-gibbs-18396525/?trk=opento_sprofile_details" class="rounded-lg border-2 border-fall-600 text-fall-800 px-5 py-3 font-semibold hover:bg-fall-200 hover:border-fall-800 transition-all">LinkedIn</a>
+        <a href="https://x.com/" class="rounded-lg border-2 border-fall-600 text-fall-800 px-5 py-3 font-semibold hover:bg-fall-200 hover:border-fall-800 transition-all">X (Twitter)</a>
+        <a href="https://steamcommunity.com/" class="rounded-lg border-2 border-fall-600 text-fall-800 px-5 py-3 font-semibold hover:bg-fall-200 hover:border-fall-800 transition-all">Steam</a>
       </div>
     </div>
   </section>
 
   <!-- Footer: Copyright information -->
-  <footer class="border-t border-paper-200">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 text-sm text-gray-600">
+  <footer class="border-t-2 border-fall-400/40 bg-paper-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10 text-sm text-gray-700">
       © <span id="year"></span> Isaac Gibbs. All rights reserved.
     </div>
   </footer>
